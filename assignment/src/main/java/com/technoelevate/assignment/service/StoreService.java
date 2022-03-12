@@ -55,7 +55,7 @@ public class StoreService implements ServiceStore {
 	}
 
 	@Override
-	public ArrayList getDataById(String str) {
+	public String getDataById(String str) {
 		String json = null;
 		BufferedReader bufferedReader = null;
 		String str1 = null;
@@ -94,13 +94,15 @@ public class StoreService implements ServiceStore {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (arrayList != null && !arrayList.isEmpty())
-			return arrayList;
+		if (arrayList != null && !arrayList.isEmpty()) {
+			json = new Gson().toJson(arrayList);
+			return json;
+		}
 		else
 			return null;
 	}
 	@Override
-	public ArrayList getDataByCityOrDate(String str, String s) {
+	public String getDataByCityOrDate(String str, String s) {
 		String json = null;
 		BufferedReader bufferedReader = null;
 		String str1 = null;
@@ -138,8 +140,10 @@ public class StoreService implements ServiceStore {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		if (arrayList != null && !arrayList.isEmpty())
-			return arrayList;
+		if (arrayList != null && !arrayList.isEmpty()) {
+			json = new Gson().toJson(arrayList);
+		return json;
+		}
 		else
 			return null;
 	}

@@ -37,13 +37,13 @@ public class StoreController {
 
 	@PostMapping(path = "/getStoresById")
 	public ResponseBean getDataById(String str) {
-		ArrayList emp = store.getDataById(str);
+		String emp = store.getDataById(str);
 		ResponseBean bean = new ResponseBean();
 		if (emp != null) {
 			bean.setStatus_code(200);
 			bean.setMessage("OK");
 			bean.setDescription("All the Store are");
-			bean.setJson(emp);
+			bean.setJson1(emp);
 		} else {
 			bean.setStatus_code(500);
 			bean.setMessage("NOT OKK");
@@ -55,13 +55,13 @@ public class StoreController {
 	@PostMapping(path = "/getStoresByCityOrDate")
 	public ResponseBean getDataByCityOrDate(String str) {
 		String s = "";
-		ArrayList emp = store.getDataByCityOrDate(str, s);
+		String emp = store.getDataByCityOrDate(str, s);
 		ResponseBean bean = new ResponseBean();
 		if (emp != null) {
 			bean.setStatus_code(200);
 			bean.setMessage("OK");
 			bean.setDescription("All the Store are");
-			bean.setJson(emp);
+			bean.setJson1(emp);
 
 		} else {
 			bean.setStatus_code(500);

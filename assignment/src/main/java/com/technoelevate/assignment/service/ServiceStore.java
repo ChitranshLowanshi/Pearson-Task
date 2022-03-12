@@ -10,8 +10,8 @@ public interface ServiceStore {
 
 	String getAllStores();
 
-	ArrayList getDataById(String str);
+	String getDataById(String str);
 
-	ArrayList getDataByCityOrDate(String str,String s);
+	String getDataByCityOrDate(String str,String s);
 
 }
